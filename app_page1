@@ -4,13 +4,33 @@
 <head>
 <title>Myapp</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+	/* Fix alignment issue of label on extra small devices in Bootstrap 3.2 */
+    .form-horizontal .control-label{
+        padding-top: 7px;
+    }
+</style>
 </head>
-<body ng-app="myapp">
+<body ng-app="myapp" class="bs-example">
 <div ng-controller="MyController" >
-<form action="page2.py" method="get" >
-Enter the url:<input type="text" name="url" />
-<input type="submit" name="submit" value="Submit" />
-<input type="reset" name="reset"  value="Reset" />
+<form action="page2.py" method="get" class="form-horizontal">
+<div class="form-group">
+<label for="inputEmail" class="control-label col-xs-2">Enter the url:</lable>
+<div class="col-xs-10">
+<input type="text" name="url" />
+</div></div>
+<div class="form-group">
+<div class="col-xs-offset-2 col-xs-10">
+<button type="submit" class="btn btn-primary">Submit</button>
+<button type="reset" class="btn btn-primary">Reset</button>
+</div></div>
 <div>
         {{myForm.url}}
     </div>
