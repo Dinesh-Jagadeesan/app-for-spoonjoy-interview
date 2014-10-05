@@ -3,11 +3,26 @@
 <html>
 <head>
 <title>Myapp</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="myapp">
+<div ng-controller="MyController" >
 <form action="page2.py" method="get" >
 Enter the url:<input type="text" name="url" />
 <input type="submit" name="submit" value="Submit" />
 <input type="reset" name="reset"  value="Reset" />
+<div>
+        {{myForm.url}}
+    </div>
+</div>
+
+<script>
+    angular.module("myapp", [])
+            .controller("MyController", function($scope) {
+                $scope.myForm = {};
+                $scope.myForm.url = "http://www.example.com";
+                
+            } );
+</script>
 </body>
 </html>
