@@ -27,9 +27,7 @@ print theTitle
 
 
 
-con = mysql.connector.connect(user='myapp', password='',
-                              host='127.0.0.1',
-                              database='myapp')
+con = mysql.connector.connect(user='myapp', password='',host='127.0.0.1',database='myapp')
                               
 cur = con.cursor()
 cur.execute("DELETE * FROM MYAPP");
