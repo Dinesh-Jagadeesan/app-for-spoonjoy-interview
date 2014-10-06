@@ -1,29 +1,15 @@
 #python code to read url and extract data
 
-import urllib, urlparse, string, mysql.connector
-url=request.get('url')
-
-def getPage(theURL):
-  page = urllib.urlopen(theURL)
-	theHTML = page.read()
-	return theHTML
-def extractTitle(theLine):
-	
-	titleStart = theLine.find("<title>")
-	if titleStart > -1:
-		titleStart = titleStart + 7
-		titleEnd = theLine.find("</title>")
-		theTitle = theLine[titleStart:titleEnd]
-		theTitle = theTitle.strip() 
-	else:
-		theTitle = ""
-		
-	return(theTitle)
-
-thePageHTML = getPage(url)
-theTitle = extractTitle(thePageHTML)
-print theTitle
-
+import urllib
+def everything_between(text,begin,end):
+    idx1=content.find(begin)
+    idx2=content.find(end,idx1)
+    return content[idx1+len(begin):idx2].strip()
+sock = urllib.urlopen("https://www.google.com")
+content = sock.read()
+sock.close()
+title=everything_between(content,'<title>','</title>')
+print title
 
 
 
