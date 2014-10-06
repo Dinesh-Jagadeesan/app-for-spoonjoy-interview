@@ -1,6 +1,6 @@
 #python code to read url and extract data
 
-import urllib,, urlparse, string, mysql.connector
+import urllib, urlparse, string, mysql.connector
 url=request.get('url')
 
 def getPage(theURL):
