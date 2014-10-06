@@ -20,13 +20,13 @@ cur.execute("DELETE * FROM MYAPP");
 cur.execute("INSERT INTO MYAPP(TITLE)VALUES (theTitle)");
 
 print "Do u wish to update(Y/N) :";
-in=raw_input();
-if in=='Y'||in=='y'
+inq=raw_input();
+if inq=='Y'or inq=='y'
    cur.execute("UPDATE MYAPP SET TITLE = '%s' "% (in));
 
 print "Do u want to view databse:(Y/N)";
-in1=raw_input();
-if in1=='Y'||in1=='y'
+inw=raw_input();
+if inw=='Y'or inw=='y'
    cur.execute("SELECT * FROM MYAPP");
    results = cursor.fetchall()
    for row in results:
