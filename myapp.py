@@ -1,6 +1,6 @@
 #python code to read url and extract data
 
-import urllib
+import urllib ,mysql.connector
 def everything_between(text,begin,end):
     idx1=content.find(begin)
     idx2=content.find(end,idx1)
